@@ -36,7 +36,7 @@ submitPost = () => {
     localStorage.setItem('postObject',JSON.stringify(postObjectParsed))
 
     alert('✓ post submitted')
-    
+
     postTitle.value = ""
     postContent.value = ""
 }

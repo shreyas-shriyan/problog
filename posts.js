@@ -1,4 +1,15 @@
 const start = () =>{
+    let user = (localStorage.getItem('loggedUser'))
+    if(user){
+        let navbar = document.getElementById('navbarSupportedContent')
+        let items = navbar.getElementsByTagName('a')
+        for(let i=0; i<items.length; i++){
+            items[i].style.display = "none"
+        }
+        document.getElementById('createPostbtn').style.display="block"
+        let name = document.getElementById('username')
+        name.textContent = user.toUpperCase()
+    }
     let language = JSON.parse(localStorage.getItem('currentPage'))
     addMainImage(language)
     searchPost(language)

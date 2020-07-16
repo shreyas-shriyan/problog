@@ -240,14 +240,22 @@ start = () => {
             }
         ]
     }
-    localStorage.setItem('postObject',JSON.stringify(data))
-
-    // let user = JSON.parse(localStorage.getItem('loggedUser'))
+    let posts = JSON.parse(localStorage.getItem('postObject'))
+    if(!posts){
+        localStorage.setItem('postObject',JSON.stringify(data))
+    }
     
-    // if(user){
-    //     let nav1 = document.getElementById('navbarSupportedContent1')
-    // }
-
+    let user = (localStorage.getItem('loggedUser'))
+    if(user){
+        let navbar = document.getElementById('navbarSupportedContent')
+        let items = navbar.getElementsByTagName('a')
+        for(let i=0; i<items.length; i++){
+            items[i].style.display = "none"
+        }
+        document.getElementById('createPostbtn').style.display="block"
+        let name = document.getElementById('username')
+        name.textContent = user.toUpperCase()
+    }
     // else{
     //     let temp = document.getElementById('navbarSupportedContent')
     //     temp.innerHTML = ""
