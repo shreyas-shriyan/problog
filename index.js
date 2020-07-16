@@ -240,16 +240,19 @@ start = () => {
             }
         ]
     }
+    localStorage.setItem('postObject',JSON.stringify(data))
+
+    // let user = JSON.parse(localStorage.getItem('loggedUser'))
     
-    let gotData = localStorage.getItem('postObject')
-    
-    if(!gotData){
-        localStorage.setItem('postObject',JSON.stringify(data))
-    }
-    
-    else{
-        let temp = docu
-    }
+    // if(user){
+    //     let nav1 = document.getElementById('navbarSupportedContent1')
+    // }
+
+    // else{
+    //     let temp = document.getElementById('navbarSupportedContent')
+    //     temp.innerHTML = ""
+    //     g
+    // }
     
     let python = document.getElementById('pythonLink')
     let c = document.getElementById('cLink')
